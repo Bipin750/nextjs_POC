@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
   const [userData, setUserData] = useState("");
+
   useEffect(() => {
     // Check if user data exists in localStorage
     if (typeof window !== "undefined") {
@@ -20,9 +21,13 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Dashboard</h1>
-      <p>Welcome, {userData ? JSON.parse(userData).email : "Guest"}!</p>
-      <Cards />
+      {userData && (
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome, {userData ? JSON.parse(userData).email : "Guest"}!</p>
+          <Cards />
+        </div>
+      )}
     </div>
   );
 };
