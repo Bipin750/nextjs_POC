@@ -23,8 +23,10 @@ const Dashboard = () => {
     <div>
       {userData && (
         <div>
-          <h1>Dashboard</h1>
-          <p>Welcome, {userData ? JSON.parse(userData).email : "Guest"}!</p>
+          <p className="font-bold text-xl m-4">
+            Welcome,{" "}
+            {userData ? JSON.parse(userData).email.split("@")[0] : "Guest"}!
+          </p>
           <Cards />
         </div>
       )}

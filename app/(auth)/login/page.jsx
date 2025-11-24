@@ -33,21 +33,22 @@ const Login = () => {
       >
         <div
           style={{
-            width: "300px",
+            width: "500px",
             margin: "50px auto",
             textAlign: "center",
-
             border: "1px solid #ccc",
             padding: "20px",
             borderRadius: "8px",
+            height: "400px",
           }}
         >
           <h2>Login Form</h2>
           <form onSubmit={handleSubmit}>
             {/* Email Field */}
-            <div style={{ marginBottom: "10px" }}>
+            <div style={{ margin: "10px", textAlign: "left" }}>
               <p>Email</p>
               <input
+                className="border rounded-md border-[#ccc]"
                 type="email"
                 value={email}
                 required
@@ -58,10 +59,11 @@ const Login = () => {
             </div>
 
             {/* Password Field */}
-            <div style={{ marginBottom: "10px" }}>
+            <div style={{ margin: "10px", textAlign: "left" }}>
               <p>Password</p>
 
               <input
+                className="border rounded-md border-[#ccc]"
                 type="password"
                 value={password}
                 required
@@ -72,6 +74,7 @@ const Login = () => {
             </div>
 
             <button
+              className="mt-[30%] rounded-md"
               type="submit"
               style={{
                 width: "100%",

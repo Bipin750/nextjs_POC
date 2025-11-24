@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const logout = () => {
     localStorage.removeItem("userData");
@@ -33,7 +35,7 @@ export default function Navbar() {
 
         {/* Hamburger Button */}
         <button
-          className="md:hidden block text-gray-700 text-2xl"
+          className="md:hidden block text-gray-700 text-2xl cursor-pointer"
           onClick={() => setOpen(!open)}
         >
           ☰
@@ -45,27 +47,22 @@ export default function Navbar() {
         <div className="md:hidden flex flex-col bg-white px-6 pb-4 text-gray-700">
           <Link
             onClick={() => setOpen(false)}
-            href="/"
-            className="py-2 border-b"
+            href="/dashboard"
+            className={`${
+              pathname === "/dashboard" ? "text-blue-600" : "py-2"
+            }`}
           >
-            Home
+            Dashboard
           </Link>
           <Link
             onClick={() => setOpen(false)}
-            href="/about"
-            className="py-2 border-b"
+            href="/report"
+            className={`${pathname === "/report" ? "text-blue-600" : "py-2"}`}
           >
-            About
+            Reports
           </Link>
-          <Link
-            onClick={() => setOpen(false)}
-            href="/services"
-            className="py-2 border-b"
-          >
-            Services
-          </Link>
-          <Link onClick={() => setOpen(false)} href="/contact" className="py-2">
-            Contact
+          <Link onClick={() => setOpen(false)} href="/login" className="py-2">
+            Log Out
           </Link>
         </div>
       )}
