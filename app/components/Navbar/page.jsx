@@ -26,10 +26,24 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex gap-6 text-gray-700">
-              <Link href="/dashboard" className="hover:text-blue-600">
+              <Link
+                href="/dashboard"
+                className={`${
+                  pathname === "/dashboard"
+                    ? "text-blue-600"
+                    : "hover:text-blue-600"
+                }`}
+              >
                 Dashboard
               </Link>
-              <Link href="/report" className="hover:text-blue-600">
+              <Link
+                href="/report"
+                className={`${
+                  pathname === "/report"
+                    ? "text-blue-600 "
+                    : "hover:text-blue-600"
+                }`}
+              >
                 Reports
               </Link>
               <Link

@@ -66,7 +66,7 @@ const Cards = () => {
         ) : (
           currentPosts.map((post) => (
             <div
-              className="overflow-auto"
+              className="overflow-auto m-2"
               key={post.id}
               style={{
                 border: "1px solid #ccc",
@@ -74,7 +74,7 @@ const Cards = () => {
                 padding: "15px",
                 marginBottom: "15px",
                 background: "#fafafa",
-                width: "28%",
+                width: "29%",
                 height: "280px",
               }}
               // className="border border-gray-300 rounded-lg p-4 mb-4 bg-gray-100"
