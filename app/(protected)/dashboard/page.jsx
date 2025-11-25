@@ -8,7 +8,6 @@ const Dashboard = () => {
   const [userData, setUserData] = useState("");
 
   useEffect(() => {
-    // Check if user data exists in localStorage
     if (typeof window !== "undefined") {
       let useData = localStorage.getItem("userData");
       if (!useData) {
@@ -27,6 +26,7 @@ const Dashboard = () => {
             Welcome,{" "}
             {userData ? JSON.parse(userData).email.split("@")[0] : "Guest"}!
           </p>
+
           <Cards />
         </div>
       )}

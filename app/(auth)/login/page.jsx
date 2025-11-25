@@ -10,14 +10,12 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Store data in localStorage as object
     const userData = { email, password };
     localStorage.setItem("userData", JSON.stringify(userData));
 
-    redirect("/dashboard");
-    // Optional: Clear form
     setEmail("");
     setPassword("");
+    redirect("/dashboard");
   };
   return (
     <>

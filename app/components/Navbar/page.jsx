@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "../ThemeToggle";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,12 +20,10 @@ export default function Navbar() {
       {shouldShowNavbar && (
         <nav className="bg-white shadow-md sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-            {/* Logo */}
             <Link href="/dashboard" className="text-xl font-bold text-blue-600">
               POC Assignment
             </Link>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex gap-6 text-gray-700">
               <Link
                 href="/dashboard"
@@ -53,6 +52,7 @@ export default function Navbar() {
               >
                 Log Out
               </Link>
+              {/* <ThemeToggle /> */}
             </div>
 
             {/* Hamburger Button */}
